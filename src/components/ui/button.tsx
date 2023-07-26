@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils';
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, children, disabled, type = 'button' }, ref) => {
+  ({ className, children, disabled, type = 'button', ...props }, ref) => {
     return (
       <button
         className={cn(
@@ -15,6 +15,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           className
         )}
         ref={ref}
+        {...props}
       >
         {children}
       </button>

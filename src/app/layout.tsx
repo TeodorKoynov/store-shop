@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Urbanist } from 'next/font/google';
+import { ModalProvider } from '@/providers/modal-provider';
 import { Footer } from '@/components/footer';
 import { Navbar } from '@/components/navbar';
 
@@ -15,6 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={urbanist.className}>
+        <ModalProvider />
         <Navbar />
         {children}
         <Footer />
